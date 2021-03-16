@@ -56,7 +56,7 @@ def save_pickle(object_to_pickle, file_name: str = "", file_path="", append_date
         if "____" in file_name: # datatime already appended to the file name
             pass
         elif "____" not in file_name:
-            file_name.split(".pickle")[0]
+            file_name = file_name.split(".pickle")[0]
             file_name =  f"{file_name}____{current_date}.pickle" 
         else:
             print("Something went wrong with `append_datetime`")
