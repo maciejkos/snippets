@@ -38,7 +38,7 @@ if x > 5:
     raise Exception(f"x should not exceed 5. The value of x was:{x}")
 ```
 
-sources:
-https://www.programiz.com/python-programming/exception-handling
-https://realpython.com/python-exceptions/
-https://docs.python.org/3/tutorial/errors.html
+References:
+- https://www.programiz.com/python-programming/exception-handling
+- https://realpython.com/python-exceptions/
+- https://docs.python.org/3/tutorial/errors.html
