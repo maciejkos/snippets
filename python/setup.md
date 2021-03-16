@@ -9,7 +9,7 @@ with open('requirements.txt', 'w') as fp:
     for line in requirements:
     	fp.write(line)
 
-pip install -r requirements.txt
+!pip install -r requirements.txt
 
 import sys
 import copy
