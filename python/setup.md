@@ -3,7 +3,7 @@
 ```python
 for_reqs = ['pandas' , 'matplotlib', 'seaborn==0.11.1', 'tqdm', 'plotly==4.14.3', 'pyjanitor', 'scipy', 'sklearn', 'statsmodels', 'plotnine']
 
-requirements = [f'{{}requirement{}}\n' for requirement in for_reqs]
+requirements = [f'{requirement}\n' for requirement in for_reqs]
 
 with open('requirements.txt', 'w') as fp:
     for line in requirements:
