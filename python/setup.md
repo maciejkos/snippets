@@ -30,6 +30,7 @@ from janitor import groupby_agg
 from sklearn import svm
 from tqdm.auto import tqdm
 from plotnine import *
+pd.set_option("max_colwidth", 150)
 
 path = pathlib.Path.cwd()
 
