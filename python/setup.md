@@ -14,6 +14,7 @@ with open('requirements.txt', 'w') as fp:
 import sys
 import copy
 import pathlib
+from pprint import pprint
 import numpy as np
 import pandas as pd
 import scipy.stats as stats
