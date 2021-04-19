@@ -1,4 +1,4 @@
-#python #time 
+#python #setup #config 
  
 ```python
 for_reqs = ['pandas' , 'matplotlib', 'seaborn==0.11.1', 'tqdm', 'plotly==4.14.3', 'pyjanitor', 'scipy', 'sklearn', 'statsmodels', 'plotnine']
