@@ -7,3 +7,9 @@ path = pathlib.Path.cwd()
 
 data_files = [file for file in path.iterdir() if "kos" in file.name and "zip" in file.suffix]
 
+```
+
+Convert ipynb to py
+```
+jupyter nbconvert --to script [YOUR_NOTEBOOK].ipynb
+```
