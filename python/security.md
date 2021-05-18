@@ -1,6 +1,6 @@
 #security #hash #sha256 
 
-1. How create a sha256 hash of a string with salt?
+1. How to create a sha256 hash of a string with salt?
 ```python
 
 import hashlib
