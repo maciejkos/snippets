@@ -13,4 +13,8 @@ set(activity for activities in activities_schedule for activity in activities)
 import copy
 my_dict = {"a": 1, "b": 2}
 my_deepcopy = copy.deepcopy(my_dict)
+
+# 3. safely delete key from dict
+my_dict.pop('key', None) # inplace, returns none if key doesn't exist
+
 ```
