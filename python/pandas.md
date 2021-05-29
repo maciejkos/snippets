@@ -47,5 +47,9 @@ population_by_state["state"] = state_name
 
 df.merge(df.set_index(['state', 'county'])['county_population'].sum(level='state').rename('state_population').reset_index()).drop(columns=['county_population']) # thanks, @smccabe!
 
+## how to pretty print a dataframte
+# first, you might need to 'conda install -c anaconda tabulate'
+
+print(df.to_markdown(tablefmt="grid"))
 
 ```
