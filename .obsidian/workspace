@@ -1,0 +1,97 @@
+{
+  "main": {
+    "id": "cec541da53779a39",
+    "type": "split",
+    "children": [
+      {
+        "id": "157ff9f9aefe7747",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "roku/roku code.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "caec6b197fe8ea38",
+    "type": "split",
+    "children": [
+      {
+        "id": "99b78fe6b2a71f3a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "45e4ef103765e62c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "700bd88e6674b0e8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "cce7e1128da30e0c",
+    "type": "split",
+    "children": [
+      {
+        "id": "8e26eb37e7aa2e95",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2095cacf155a05f0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "roku/roku code.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "157ff9f9aefe7747",
+  "lastOpenFiles": [
+    "Untitled.md",
+    "python/roku.md",
+    "python/try-except.md",
+    "python/files.md",
+    "python/setup.md"
+  ]
+}
