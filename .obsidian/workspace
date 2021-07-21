@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "roku/roku code.md",
+            "file": "python/misc tricks.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "roku/roku code.md",
+                "file": "python/misc tricks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,6 +88,7 @@
   },
   "active": "157ff9f9aefe7747",
   "lastOpenFiles": [
+    "python/misc tricks.md",
     "roku/roku code.md",
     "roku/Timecard template.md",
     "other/aws athena.md",
@@ -96,7 +97,6 @@
     "python/serialize.md",
     "README.md",
     "Untitled.md",
-    "python/misc tricks.md",
     "python/one liners.md"
   ]
 }
