@@ -13,6 +13,7 @@ with open('requirements.txt', 'w') as fp:
 
 import sys
 import copy
+from typing import List, Set, Dict, Tuple, Optional
 import pathlib
 from pprint import pprint
 import numpy as np
@@ -32,6 +33,7 @@ from sklearn import svm
 from tqdm.auto import tqdm
 from plotnine import *
 pd.set_option("max_colwidth", 150)
+%precision 10
 
 path = pathlib.Path.cwd()
 

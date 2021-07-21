@@ -88,10 +88,15 @@
   },
   "active": "157ff9f9aefe7747",
   "lastOpenFiles": [
+    "roku/roku code.md",
+    "roku/Timecard template.md",
+    "other/aws athena.md",
+    "python/pandas.md",
+    "python/logging.md",
+    "python/serialize.md",
+    "README.md",
     "Untitled.md",
-    "python/roku.md",
-    "python/try-except.md",
-    "python/files.md",
-    "python/setup.md"
+    "python/misc tricks.md",
+    "python/one liners.md"
   ]
 }
