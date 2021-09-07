@@ -47,9 +47,59 @@ population_by_state["state"] = state_name
 
 df.merge(df.set_index(['state', 'county'])['county_population'].sum(level='state').rename('state_population').reset_index()).drop(columns=['county_population']) # thanks, @smccabe!
 
-## how to pretty print a dataframte
+## how to pretty print a dataframe
 # first, you might need to 'conda install -c anaconda tabulate'
 
 print(df.to_markdown(tablefmt="grid"))
+
+## How to find unique combinations of values in n columns
+
+def find_unique_combinations_of_column_values(df, cols):
+    """
+    Summary:
+        Returns a list unique combinations of values from two columns in a dataframe
+    Args:
+        df (pandas.DataFrame): dataframe to search
+        cols (list): list of columns to search
+    Returns:
+        a list of unique combinations of values from two columns in a dataframe
+    
+    Example:
+        >>> df = pd.DataFrame({'A': [1, 2], 'B': [5, 6, 7, 8]})
+        >>> unique_combinations(df, ['A', 'B'])
+                                               
+    """
+
+    unique_combinations = df[cols].apply(lambda x: '_'.join(x.astype(str)), axis=1).unique()
+    unique_combinations = [x for x in unique_combinations]
+    return df[cols].apply(lambda x: '_'.join(x.astype(str)), axis=1).unique()
+	
+## How to transfrom columns from long to wide?
+
+df = pd.DataFrame({
+    'time': [1, 2, 1, 2],
+    'metric_name': ["speed", "speed", "distance", "distance"],
+    'metric_value': [15, 30, 5, 10]}).sort_values("time")
+df
+
+| time | metric_name | metric_value |
+| :--- | :---------- | :----------- |
+| 1    | speed       | 15           |
+| 1    | distance    | 5            |
+| 2    | speed       | 30           |
+| 2    | distance    | 10           |
+
+
+df_pivoted = (df.pivot_table(
+    index=["time"], 
+    columns=["metric_name"], 
+    values="metric_value")
+    ).rename_axis(None, axis=1).reset_index()
+df_pivoted
+
+| time | distance | speed |
+| :--- | :------- | :---- |
+| 1    | 5        | 15    |
+| 2    | 10       | 30    |
 
 ```
