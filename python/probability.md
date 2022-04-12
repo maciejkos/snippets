@@ -3,6 +3,7 @@
  
 ```python
 # create all n element combinations and permutations of a list
+import itertools
 
 terms_ = ["a","b","c"]
 
