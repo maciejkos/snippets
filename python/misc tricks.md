@@ -1,6 +1,7 @@
 #python 
 1. How to get the name of a variable as string?
 2. How to capture what a function prints, save it to a file, while allowing the function to print in real-time? #context #manager
+3. How to reload an imported module?
 ```python
 
 # How to get the name of a variable as string?
@@ -56,4 +57,15 @@ print(capturing.path)
 with Capturing(string_io=True) as capturing:
     test()
 print(capturing.data.getvalue())
+
+# How to reload an imported module?
+
+## Imagine you imported a module like this:
+## import questions_utils as q_utils
+
+## You made a change to the module and want to reload it without restarting the interpreter or kernel.
+
+import importlib
+importlib.reload(q_utils) # module is now reloaded
+
 ```

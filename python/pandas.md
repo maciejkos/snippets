@@ -3,6 +3,14 @@
 ```python
 import pandas as pd
 
+# subset pandas df by datetime range
+def subset_by_dt_range(df, start: dt.datetime, end: dt.datetime, date_col_name: str = "datetime"):
+
+    "Returns a subset of the dataframe that is within the given date range. Start and end are inclusive."
+
+    return df[(df[date_col_name] >= start) & (df[date_col_name] <= end)]
+
+
 # keep rows that don't contain a string #filter 
 filter_str = "banned_word"
 df.loc[~df.model.str.contains(filter_str): ]

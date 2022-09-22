@@ -10,8 +10,18 @@ pd.to_datetime(dt.datetime(2017, 1, 1, 0, 0))
 # get date string
 pd.to_datetime(dt.datetime(2017, 1, 1, 0, 0)).strftime('%Y %m')
 
+# get date from string
+pd.to_datetime('2023-05-27').strftime('%Y-%m-%d')
+
 # parse dates
 df = pd.read_csv(fp, dtype=str, parse_dates=['date'], index_col='date') 
+
+# subset pandas df by datetime range
+def subset_by_dt_range(df, start: dt.datetime, end: dt.datetime, date_col_name: str = "datetime"):
+
+    "Returns a subset of the dataframe that is within the given date range. Start and end are inclusive."
+
+    return df[(df[date_col_name] >= start) & (df[date_col_name] <= end)]
 
 # decompose: multiplicative 
 from statsmodels.tsa.seasonal import seasonal_decompose 
