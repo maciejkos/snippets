@@ -110,4 +110,34 @@ df_pivoted
 | 1    | 5        | 15    |
 | 2    | 10       | 30    |
 
+## How to copy a dataframe as markdown to clipboard?
+pd.io.clipboards.to_clipboard(df.to_markdown(), excel=False)
+
+## How to increment value in column based on changes in value of another column?
+# https://stackoverflow.com/a/47493345
+
+|    | name_y   |     -——>     |    | name_y   |   name_group |
+|---:|:---------|     -——>     |---:|:---------|-------------:|
+|  0 | cat      |     -——>     |  0 | cat      |            1 |
+|  1 | cat      |     -——>     |  1 | cat      |            1 |
+|  2 | RATS!    |     -——>     |  2 | RATS!    |            2 |
+|  3 | RATS!    |     -——>     |  3 | RATS!    |            2 |
+|  4 | RATS!    |     -——>     |  4 | RATS!    |            2 |
+|  5 | cat      |     -——>     |  5 | cat      |            3 |
+|  6 | RATS!    |     -——>     |  6 | RATS!    |            4 |
+|  7 | nan      |     -——>     |  7 | nan      |            5 |
+|  8 | nan      |     -——>     |  8 | nan      |            5 |
+
+df = pd.DataFrame()
+df["name_y"] = pd.Series(["cat","cat","RATS!","RATS!","RATS!","cat","RATS!","nan","nan"])
+
+import numpy as np
+from itertools import groupby
+grouped = [list(g) for k, g in groupby(df.name_y.tolist())]
+
+name_group = np.repeat(range(len(grouped)),[len(x) for x in grouped])+1
+df["name_group"] = name_group
+
+
+
 ```
