@@ -2,9 +2,10 @@
 1. How to get the name of a variable as string?
 2. How to capture what a function prints, save it to a file, while allowing the function to print in real-time? #context #manager
 3. How to reload an imported module?
+4. How do I get the size of an object with memory (with all references)?
 ```python
 
-# How to get the name of a variable as string?
+# 1. How to get the name of a variable as string?
 import inspect
 
 def retrieve_name(var):
@@ -15,7 +16,7 @@ def retrieve_name(var):
 	callers_local_vars = inspect.currentframe().f_back.f_locals.items()
 	return [var_name for var_name, var_val in callers_local_vars if var_val is var][0]
 	
-# How to capture what a function prints, save it to a file, while allowing the function to print in real-time? 
+# 2. How to capture what a function prints, save it to a file, while allowing the function to print in real-time? 
 # Thanks Nathan Buckner!
 
 from io import StringIO
@@ -58,7 +59,7 @@ with Capturing(string_io=True) as capturing:
     test()
 print(capturing.data.getvalue())
 
-# How to reload an imported module?
+# 3. How to reload an imported module?
 
 ## Imagine you imported a module like this:
 ## import questions_utils as q_utils
@@ -68,4 +69,44 @@ print(capturing.data.getvalue())
 import importlib
 importlib.reload(q_utils) # module is now reloaded
 
+
+# 4. How do I get the size of an object with memory (with all references)?
+
+import sys
+import gc
+import math
+
+def convert_size(size_bytes):
+   """
+   Source: https://stackoverflow.com/a/14822210
+   """
+   if size_bytes == 0:
+       return "0B"
+   size_name = ("B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB")
+   i = int(math.floor(math.log(size_bytes, 1024)))
+   p = math.pow(1024, i)
+   s = round(size_bytes / p, 2)
+   return "%s %s" % (s, size_name[i])
+
+
+def get_actual_size(input_obj):
+    """
+    Gets object size in bytes and converts it to human-readable form; works for nested objects and grabs all objects that are referenced by the input object
+
+    Source: https://towardsdatascience.com/the-strange-size-of-python-objects-in-memory-ce87bdfbb97f  (with a single modification: added convert_size() on the last line)
+    """
+    memory_size = 0
+    ids = set()
+    objects = [input_obj]
+    while objects:
+        new = []
+        for obj in objects:
+            if id(obj) not in ids:
+                ids.add(id(obj))
+                memory_size += sys.getsizeof(obj)
+                new.append(obj)
+        objects = gc.get_referents(*new)
+    return convert_size(memory_size)
+
+get_actual_size(figures)
 ```
