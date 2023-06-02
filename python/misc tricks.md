@@ -3,6 +3,7 @@
 2. How to capture what a function prints, save it to a file, while allowing the function to print in real-time? #context #manager
 3. How to reload an imported module?
 4. How do I get the size of an object with memory (with all references)?
+5. How to check if a variable is an instance of any class? [Don't use isinstance()!] #oop #classes
 ```python
 
 # 1. How to get the name of a variable as string?
@@ -109,4 +110,8 @@ def get_actual_size(input_obj):
     return convert_size(memory_size)
 
 get_actual_size(figures)
+
+
+# 5. How to check if a variable is an instance of any class? [Don't use isinstance()!]
+hasattr(variable, '__dict__') 
 ```
